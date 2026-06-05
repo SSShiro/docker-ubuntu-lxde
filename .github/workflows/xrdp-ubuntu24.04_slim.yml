@@ -32,5 +32,5 @@ jobs:
           build-args: |
             ADDITIONAL_APT_GET_OPTS=--no-install-recommends
           tags: |
-            ${{ secrets.DOCKERHUB_USERNAME }}/docker-ubuntu-lxde:24.04-xrdp-slim_ja
-            ${{ secrets.DOCKERHUB_USERNAME }}/docker-ubuntu-lxde:noble-xrdp-slim_ja
+            ${{ secrets.DOCKERHUB_USERNAME }}/docker-ubuntu-lxde:24.04-xrdp-slim_ru
+            ${{ secrets.DOCKERHUB_USERNAME }}/docker-ubuntu-lxde:noble-xrdp-slim_ru

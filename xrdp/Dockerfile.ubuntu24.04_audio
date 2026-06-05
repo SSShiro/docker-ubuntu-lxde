@@ -1,4 +1,5 @@
-FROM yama07/docker-ubuntu-lxde:24.04-xrdp_ja
+ARG DOCKERHUB_USERNAME=ssshiro
+FROM ${DOCKERHUB_USERNAME}/docker-ubuntu-lxde:24.04-xrdp_ru
 
 RUN \
     # Disable unavailable pipewire features

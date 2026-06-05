@@ -29,6 +29,8 @@ jobs:
           context: xrdp
           file: xrdp/Dockerfile.ubuntu22.04_pulseaudio
           platforms: linux/amd64,linux/arm64
+          build-args: |
+            DOCKERHUB_USERNAME=${{ secrets.DOCKERHUB_USERNAME }}
           tags: |
-            ${{ secrets.DOCKERHUB_USERNAME }}/docker-ubuntu-lxde:22.04-xrdp-pulseaudio_ja
-            ${{ secrets.DOCKERHUB_USERNAME }}/docker-ubuntu-lxde:jammy-xrdp-pulseaudio_ja
+            ${{ secrets.DOCKERHUB_USERNAME }}/docker-ubuntu-lxde:22.04-xrdp-pulseaudio_ru
+            ${{ secrets.DOCKERHUB_USERNAME }}/docker-ubuntu-lxde:jammy-xrdp-pulseaudio_ru

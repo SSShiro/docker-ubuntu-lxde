@@ -1,4 +1,5 @@
-FROM yama07/docker-ubuntu-lxde:22.04-pulseaudio_ja
+ARG DOCKERHUB_USERNAME=ssshiro
+FROM ${DOCKERHUB_USERNAME}/docker-ubuntu-lxde:22.04-xrdp-pulseaudio_ru
 
 ## Customize login screen
 RUN apt-get update \
@@ -56,8 +57,8 @@ RUN \
       echo 'Defaults env_keep="http_proxy"'; \
       echo 'Defaults env_keep+="https_proxy"'; \
     } > /etc/sudoers.d/ENV_KEEP \
-    ### Default engine
-    && sed -i "1i dconf write /desktop/ibus/general/preload-engines \"['mozc-jp']\"" /etc/skel/.xsession
+    ### Default keyboard layout
+    && true
 
 ## Dev tools
 RUN apt-get update \

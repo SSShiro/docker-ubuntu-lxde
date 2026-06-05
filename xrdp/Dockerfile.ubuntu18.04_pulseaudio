@@ -1,4 +1,5 @@
-FROM yama07/docker-ubuntu-lxde:ubuntu18.04_ja
+ARG DOCKERHUB_USERNAME=ssshiro
+FROM ${DOCKERHUB_USERNAME}/docker-ubuntu-lxde:ubuntu18.04_ru
 
 RUN apt-get update \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y \

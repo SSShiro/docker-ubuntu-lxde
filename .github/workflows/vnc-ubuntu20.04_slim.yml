@@ -32,5 +32,5 @@ jobs:
           build-args: |
             ADDITIONAL_APT_GET_OPTS=--no-install-recommends
           tags: |
-            ${{ secrets.DOCKERHUB_USERNAME }}/docker-ubuntu-lxde:20.04-vnc-slim_ja
-            ${{ secrets.DOCKERHUB_USERNAME }}/docker-ubuntu-lxde:focal-vnc-slim_ja
+            ${{ secrets.DOCKERHUB_USERNAME }}/docker-ubuntu-lxde:20.04-vnc-slim_ru
+            ${{ secrets.DOCKERHUB_USERNAME }}/docker-ubuntu-lxde:focal-vnc-slim_ru

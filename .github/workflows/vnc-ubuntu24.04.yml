@@ -30,6 +30,6 @@ jobs:
           file: vnc/Dockerfile.ubuntu24.04
           platforms: linux/amd64,linux/arm64
           tags: |
-            ${{ secrets.DOCKERHUB_USERNAME }}/docker-ubuntu-lxde:24.04-vnc_ja
-            ${{ secrets.DOCKERHUB_USERNAME }}/docker-ubuntu-lxde:noble-vnc_ja
+            ${{ secrets.DOCKERHUB_USERNAME }}/docker-ubuntu-lxde:24.04-vnc_ru
+            ${{ secrets.DOCKERHUB_USERNAME }}/docker-ubuntu-lxde:noble-vnc_ru
             ${{ secrets.DOCKERHUB_USERNAME }}/docker-ubuntu-lxde:latest-vnc

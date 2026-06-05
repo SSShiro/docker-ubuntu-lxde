@@ -1,100 +1,96 @@
 # docker-ubuntu-lxde VNC
 
-[![Docker Pulls](https://img.shields.io/docker/pulls/yama07/docker-ubuntu-lxde?style=for-the-badge)](https://hub.docker.com/r/yama07/docker-ubuntu-lxde)
-[![GitHub](https://img.shields.io/github/license/yama07/docker-ubuntu-lxde?style=for-the-badge)](https://github.com/yama07/docker-ubuntu-lxde)
+[![Docker Pulls](https://img.shields.io/docker/pulls/ssshiro/docker-ubuntu-lxde?style=for-the-badge)](https://hub.docker.com/r/ssshiro/docker-ubuntu-lxde)
+[![GitHub](https://img.shields.io/github/license/SSShiro/docker-ubuntu-lxde?style=for-the-badge)](https://github.com/SSShiro/docker-ubuntu-lxde)
 
-## What is this?
+## Что это?
 
-Docker による Ubuntu の LXDE/LXQt デスクトップ環境です。
-リモートデスクトップとして VNC(x11vnc, noVNC)を使用します。
+Docker-образ с рабочим столом LXDE/LXQt на базе Ubuntu.
+Для удалённого подключения используется VNC (x11vnc, noVNC).
 
-日本語環境(ibus-mozc による日本語入力可能)かつ、`-u`による一般ユーザ起動においても`sudo`コマンドが使用可能です。
+Русская локаль, часовой пояс Moscow. При запуске от обычного пользователя через `-u` доступна команда `sudo`.
 
-![スクリーンショット](https://raw.githubusercontent.com/yama07/docker-ubuntu-lxde/master/screenshot/VNC-ubuntu24.04_ja.png)
-![スクリーンショット](https://raw.githubusercontent.com/yama07/docker-ubuntu-lxde/master/screenshot/noVNC-ubuntu24.04_ja.png)
+![Скриншот VNC](https://raw.githubusercontent.com/SSShiro/docker-ubuntu-lxde/master/screenshot/VNC-ubuntu24.04_ja.png)
+![Скриншот noVNC](https://raw.githubusercontent.com/SSShiro/docker-ubuntu-lxde/master/screenshot/noVNC-ubuntu24.04_ja.png)
 
-## Supported tags
+## Поддерживаемые теги
 
-- [![Docker Image Size (tag)](https://img.shields.io/docker/image-size/yama07/docker-ubuntu-lxde/24.04-vnc_ja?style=flat-square)](https://hub.docker.com/r/yama07/docker-ubuntu-lxde/tags?name=24.04-vnc_ja)
-  `24.04-vnc_ja`, `noble-vnc_ja`, `latest-vnc`: Ubuntu24.04 ベース LXQt [(vnc/Dockerfile.ubuntu24.04)](https://github.com/yama07/docker-ubuntu-lxde/blob/master/vnc/Dockerfile.ubuntu24.04)
-- [![Docker Image Size (tag)](https://img.shields.io/docker/image-size/yama07/docker-ubuntu-lxde/24.04-vnc-slim_ja?style=flat-square)](https://hub.docker.com/r/yama07/docker-ubuntu-lxde/tags?name=24.04-vnc-slim_ja)
-  `24.04-vnc-slim_ja`, `noble-vnc-slim_ja`: サイズを軽量化した Ubuntu24.04 ベース LXQt [(vnc/Dockerfile.ubuntu24.04_slim)](https://github.com/yama07/docker-ubuntu-lxde/blob/master/vnc/Dockerfile.ubuntu24.04)
-- [![Docker Image Size (tag)](https://img.shields.io/docker/image-size/yama07/docker-ubuntu-lxde/22.04-vnc_ja?style=flat-square)](https://hub.docker.com/r/yama07/docker-ubuntu-lxde/tags?name=22.04-vnc_ja)
-  `22.04-vnc_ja`, `jammy-vnc_ja`: Ubuntu22.04 ベース [(vnc/Dockerfile.ubuntu22.04)](https://github.com/yama07/docker-ubuntu-lxde/blob/master/vnc/Dockerfile.ubuntu22.04)
-- [![Docker Image Size (tag)](https://img.shields.io/docker/image-size/yama07/docker-ubuntu-lxde/22.04-vnc-slim_ja?style=flat-square)](https://hub.docker.com/r/yama07/docker-ubuntu-lxde/tags?name=22.04-vnc-slim_ja)
-  `22.04-vnc-slim_ja`, `jammy-vnc-slim_ja`: サイズを軽量化した Ubuntu22.04 ベース [(vnc/Dockerfile.ubuntu22.04_slim)](https://github.com/yama07/docker-ubuntu-lxde/blob/master/vnc/Dockerfile.ubuntu22.04)
-- [![Docker Image Size (tag)](https://img.shields.io/docker/image-size/yama07/docker-ubuntu-lxde/20.04-vnc_ja?style=flat-square)](https://hub.docker.com/r/yama07/docker-ubuntu-lxde/tags?name=20.04-vnc_ja)
-  `20.04-vnc_ja`, `focal-vnc_ja`: Ubuntu20.04 ベース [(vnc/Dockerfile.ubuntu20.04)](https://github.com/yama07/docker-ubuntu-lxde/blob/master/vnc/Dockerfile.ubuntu20.04)
-- [![Docker Image Size (tag)](https://img.shields.io/docker/image-size/yama07/docker-ubuntu-lxde/20.04-vnc-slim_ja?style=flat-square)](https://hub.docker.com/r/yama07/docker-ubuntu-lxde/tags?name=20.04-vnc-slim_ja)
-  `20.04-vnc-slim_ja`, `focal-vnc-slim_ja`: サイズを軽量化した Ubuntu20.04 ベース [(vnc/Dockerfile.ubuntu20.04_slim)](https://github.com/yama07/docker-ubuntu-lxde/blob/master/vnc/Dockerfile.ubuntu20.04)
+- [![Docker Image Size (tag)](https://img.shields.io/docker/image-size/ssshiro/docker-ubuntu-lxde/24.04-vnc_ru?style=flat-square)](https://hub.docker.com/r/ssshiro/docker-ubuntu-lxde/tags?name=24.04-vnc_ru)
+  `24.04-vnc_ru`, `noble-vnc_ru`, `latest-vnc`: Ubuntu 24.04, LXQt [(vnc/Dockerfile.ubuntu24.04)](https://github.com/SSShiro/docker-ubuntu-lxde/blob/master/vnc/Dockerfile.ubuntu24.04)
+- [![Docker Image Size (tag)](https://img.shields.io/docker/image-size/ssshiro/docker-ubuntu-lxde/24.04-vnc-slim_ru?style=flat-square)](https://hub.docker.com/r/ssshiro/docker-ubuntu-lxde/tags?name=24.04-vnc-slim_ru)
+  `24.04-vnc-slim_ru`, `noble-vnc-slim_ru`: облегчённый Ubuntu 24.04, LXQt [(vnc/Dockerfile.ubuntu24.04)](https://github.com/SSShiro/docker-ubuntu-lxde/blob/master/vnc/Dockerfile.ubuntu24.04)
+- [![Docker Image Size (tag)](https://img.shields.io/docker/image-size/ssshiro/docker-ubuntu-lxde/22.04-vnc_ru?style=flat-square)](https://hub.docker.com/r/ssshiro/docker-ubuntu-lxde/tags?name=22.04-vnc_ru)
+  `22.04-vnc_ru`, `jammy-vnc_ru`: Ubuntu 22.04, LXDE [(vnc/Dockerfile.ubuntu22.04)](https://github.com/SSShiro/docker-ubuntu-lxde/blob/master/vnc/Dockerfile.ubuntu22.04)
+- [![Docker Image Size (tag)](https://img.shields.io/docker/image-size/ssshiro/docker-ubuntu-lxde/22.04-vnc-slim_ru?style=flat-square)](https://hub.docker.com/r/ssshiro/docker-ubuntu-lxde/tags?name=22.04-vnc-slim_ru)
+  `22.04-vnc-slim_ru`, `jammy-vnc-slim_ru`: облегчённый Ubuntu 22.04, LXDE [(vnc/Dockerfile.ubuntu22.04)](https://github.com/SSShiro/docker-ubuntu-lxde/blob/master/vnc/Dockerfile.ubuntu22.04)
+- [![Docker Image Size (tag)](https://img.shields.io/docker/image-size/ssshiro/docker-ubuntu-lxde/20.04-vnc_ru?style=flat-square)](https://hub.docker.com/r/ssshiro/docker-ubuntu-lxde/tags?name=20.04-vnc_ru)
+  `20.04-vnc_ru`, `focal-vnc_ru`: Ubuntu 20.04, LXDE [(vnc/Dockerfile.ubuntu20.04)](https://github.com/SSShiro/docker-ubuntu-lxde/blob/master/vnc/Dockerfile.ubuntu20.04)
+- [![Docker Image Size (tag)](https://img.shields.io/docker/image-size/ssshiro/docker-ubuntu-lxde/20.04-vnc-slim_ru?style=flat-square)](https://hub.docker.com/r/ssshiro/docker-ubuntu-lxde/tags?name=20.04-vnc-slim_ru)
+  `20.04-vnc-slim_ru`, `focal-vnc-slim_ru`: облегчённый Ubuntu 20.04, LXDE [(vnc/Dockerfile.ubuntu20.04)](https://github.com/SSShiro/docker-ubuntu-lxde/blob/master/vnc/Dockerfile.ubuntu20.04)
 
-## How to use
+## Использование
 
-### Docker コンテナの起動
-
-Docker コンテナの起動方法は以下の通りです。
+### Запуск контейнера
 
 ```
 $ docker run --rm -it \
     -p 5900:5900 \
     -p 8080:80 \
     -u $(id -u):$(id -g) \
-    -e USER=yama07 \
+    -e USER=developer \
     -e PASSWD=mypasswd \
     -e RESOLUTION=1024x768x24 \
-    yama07/docker-ubuntu-lxde:24.04-vnc_ja
+    ssshiro/docker-ubuntu-lxde:24.04-vnc_ru
 ```
 
-オプションは以下の通りです。
+Параметры запуска:
 
 - `-p vnc_port:5900`
-  VNC クライアントから接続されるポートを`vnc_port`に設定してください。
-  VNC クライアントから接続しない場合（noVNC のみ利用する場合）は、設定不要です。
+  Укажите в `vnc_port` порт для подключения VNC-клиента.
+  Не требуется, если VNC-клиент не используется (только noVNC).
 - `-p novnc_port:80`
-  Web ブラウザから接続されるポートを`novnc_port`に設定してください。
-  noVNC を利用しない場合（VNC クライアント接続のみ利用する場合）は、設定不要です。
+  Укажите в `novnc_port` порт для подключения через браузер.
+  Не требуется, если noVNC не используется (только VNC-клиент).
 - `-u user:group`
-  コンテナを起動する UID を`user`に、GID を`group`に設定してください。
-  指定しない場合は、root ユーザ(UID=0,GID=0)として起動します。
-  なお、root ユーザとして起動した場合は、日本語入力(mozc)が利用できません。
+  Укажите UID в `user` и GID в `group` для запуска контейнера.
+  Если не задано — контейнер запускается от root (UID=0, GID=0).
 - `-e USER=loginUser`
-  RDP によるログインユーザを`loginUser`に設定してください。
-  指定しない場合は、"developer"となります。ただし、root ユーザとしてコンテナを起動した際は"root"となります。
+  Имя пользователя для входа в рабочий стол. По умолчанию — `developer`
+  (при запуске от root — `root`).
 - `-e PASSWD=loginPasswd`
-  RDP によるログインパスワードを`loginPasswd`に設定してください。
-  指定しない場合は、"vncpasswd"となります。
+  Пароль для входа. По умолчанию — `vncpasswd`.
 - `-e RESOLUTION=WxHxD`
-  スクリーンの幅を`W`、高さを`H`、深さを`D`に設定してください。
-  指定しない場合は、"1280x720x24"となります。
+  Разрешение экрана: ширина `W`, высота `H`, глубина цвета `D`.
+  По умолчанию — `1280x720x24`.
 
-接続後にログイン画面やデスクトップ画面が表示されない場合、`--privileged`オプションを付けることで成功する可能性があります。
+Если после подключения не отображается рабочий стол, попробуйте добавить опцию `--privileged`.
 
-コンテナ内のデスクトップ環境において、ほとんどの個人設定はホームディレクトリに保存されるため、 `-v ${HOME}/container_home:/home/yama07` のようにホームディレクトリをマウントするオプションを追加すれば、コンテナを停止＆起動しても個人の設定が維持されます。
-ただし、マウントするディレクトリを**起動前に**作成しておかないと、Permission エラーが発生するため注意してください。
+Большинство пользовательских настроек хранятся в домашнем каталоге контейнера.
+Чтобы сохранять их между перезапусками, добавьте `-v ${HOME}/container_home:/home/developer`.
+**Создайте каталог для монтирования заранее**, иначе возникнет ошибка прав доступа.
 
-### クライアントからの接続
+### Подключение клиента
 
-#### VNC クライアント
+#### VNC-клиент
 
-docker run 後に、RealVNC や UltraVNC 等の VNC クライアント（VNC Viewer）で接続して下さい。
+После `docker run` подключитесь через VNC-клиент (RealVNC, UltraVNC и др.).
 
-この際、接続先は<Docker ホストの IP>:<`-p`オプションで指定した`vnc_port`>、パスワードは`-e PASSWD`で指定した`loginPasswd`を指定してください。
+Адрес подключения: `<IP Docker-хоста>:<vnc_port>`, пароль — значение `-e PASSWD`.
 
 #### noVNC
 
-docker run 後に、Web ブラウザで接続して下さい。
+После `docker run` откройте в браузере:
 
-この際、接続先は http://<Docker ホストの IP>:<`-p`オプションで指定した`novnc_port`>/vnc.html (e.g. `http://localhost:8080/vnc.html`)、パスワードは`-e PASSWD`で指定した`loginPasswd`を指定してください。
+`http://<IP Docker-хоста>:<novnc_port>/vnc.html` (например, `http://localhost:8080/vnc.html`)
 
-## How to build
+Пароль — значение `-e PASSWD`.
 
-Docker イメージのビルド方法は以下の通りです。
-（イメージの名前やタグは適宜変更してください。）
+## Сборка образа
 
 ```
-$ git clone https://github.com/yama07/docker-ubuntu-lxde.git
+$ git clone https://github.com/SSShiro/docker-ubuntu-lxde.git
 $ docker build \
-    -t lxde_vnc:ubuntu24.04_ja \
+    -t lxde_vnc:ubuntu24.04_ru \
     -f ./vnc/Dockerfile.ubuntu24.04 \
     ./vnc
 ```

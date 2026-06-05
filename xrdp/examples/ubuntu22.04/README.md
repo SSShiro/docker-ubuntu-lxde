@@ -1,33 +1,33 @@
-# docker-ubuntu-lxde XRDP example
+# docker-ubuntu-lxde XRDP — пример кастомизации
 
-## What is this?
+## Что это?
 
-[Docker Hub で公開している Docker イメージ](https://hub.docker.com/r/yama07/docker-ubuntu-lxde)をベースイメージとして利用した、カスタマイズ例です。
+Пример кастомизации на основе [Docker-образа с Docker Hub](https://hub.docker.com/r/ssshiro/docker-ubuntu-lxde).
 
-- ログイン画面のカスタマイズ  
-  ![カスタマイズ例 ログイン画面](https://raw.githubusercontent.com/yama07/docker-ubuntu-lxde/master/screenshot/XRDP-example-22.04-login.png)
-- デスクトップテーマのカスタマイズ  
-  ![カスタマイズ例 テーマ](https://raw.githubusercontent.com/yama07/docker-ubuntu-lxde/master/screenshot/XRDP-example-22.04.png)
-- アプリケーションのインストール  
-  ![カスタマイズ例 アプリ](https://raw.githubusercontent.com/yama07/docker-ubuntu-lxde/master/screenshot/XRDP-example-22.04-app.png)
+- Кастомизация экрана входа
+  ![Пример — экран входа](https://raw.githubusercontent.com/SSShiro/docker-ubuntu-lxde/master/screenshot/XRDP-example-22.04-login.png)
+- Кастомизация темы рабочего стола
+  ![Пример — тема](https://raw.githubusercontent.com/SSShiro/docker-ubuntu-lxde/master/screenshot/XRDP-example-22.04.png)
+- Установка приложений
+  ![Пример — приложения](https://raw.githubusercontent.com/SSShiro/docker-ubuntu-lxde/master/screenshot/XRDP-example-22.04-app.png)
 
-## How to use
+## Использование
 
-### Docker イメージのビルド
+### Сборка образа
 
-Docker イメージ名は任意の名前で構わないため、必要に応じて`docker-compose.yml`内の`image`を変更して、以下コマンドを実行してください。
+При необходимости измените имя образа в `docker-compose.yml` (`image`), затем выполните:
 
 ```
 $ docker compose build
 ```
 
-### Docker コンテナの起動
+### Запуск контейнера
 
-`docker-compose.yml`内の`user`を自身の"ユーザ ID:グループ ID"に修正してください。
-また、ログイン ID/PW、バインドするポート番号や、マウントするディレクトリの設定は適宜変更して、以下コマンドを実行してください。
+В `docker-compose.yml` укажите в поле `user` свой «UID:GID».
+Настройте логин/пароль, порт и каталог монтирования, затем выполните:
 
 ```
 $ docker compose up -d
 ```
 
-接続後にログイン画面やデスクトップ画面が表示されない場合、`privileged: true`オプションを付けることで成功する可能性があります。
+Если после подключения не отображается экран входа или рабочий стол, добавьте `privileged: true` в `docker-compose.yml`.

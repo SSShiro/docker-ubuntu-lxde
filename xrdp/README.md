@@ -1,110 +1,104 @@
 # docker-ubuntu-lxde XRDP
 
-[![Docker Pulls](https://img.shields.io/docker/pulls/yama07/docker-ubuntu-lxde?style=for-the-badge)](https://hub.docker.com/r/yama07/docker-ubuntu-lxde)
-[![GitHub](https://img.shields.io/github/license/yama07/docker-ubuntu-lxde?style=for-the-badge)](https://github.com/yama07/docker-ubuntu-lxde)
+[![Docker Pulls](https://img.shields.io/docker/pulls/ssshiro/docker-ubuntu-lxde?style=for-the-badge)](https://hub.docker.com/r/ssshiro/docker-ubuntu-lxde)
+[![GitHub](https://img.shields.io/github/license/SSShiro/docker-ubuntu-lxde?style=for-the-badge)](https://github.com/SSShiro/docker-ubuntu-lxde)
 
-## What is this?
+## Что это?
 
-Docker による Ubuntu の LXDE/LXQt デスクトップ環境です。
-リモートデスクトップとして RDP(xrdp)を使用します。
+Docker-образ с рабочим столом LXDE/LXQt на базе Ubuntu.
+Для удалённого подключения используется RDP (xrdp).
 
-日本語環境(ibus-mozc による日本語入力可能)かつ、`-u`による一般ユーザ起動においても`sudo`コマンドが使用可能です。
+Русская локаль, часовой пояс Moscow. При запуске от обычного пользователя через `-u` доступна команда `sudo`.
 
-![スクリーンショット](https://raw.githubusercontent.com/yama07/docker-ubuntu-lxde/master/screenshot/XRDP-ubuntu24.04_ja.png)
+![Скриншот XRDP](https://raw.githubusercontent.com/SSShiro/docker-ubuntu-lxde/master/screenshot/XRDP-ubuntu24.04_ja.png)
 
-## Supported tags
+## Поддерживаемые теги
 
-- [![Docker Image Size (tag)](https://img.shields.io/docker/image-size/yama07/docker-ubuntu-lxde/24.04-xrdp_ja?style=flat-square)](https://hub.docker.com/r/yama07/docker-ubuntu-lxde/tags?name=24.04-xrdp_ja)
-  `24.04-xrdp_ja`, `noble-xrdp_ja`, `latest-xrdp`, `latest`: Ubuntu24.04 ベース LXQt [(xrdp/Dockerfile.ubuntu24.04)](https://github.com/yama07/docker-ubuntu-lxde/blob/master/xrdp/Dockerfile.ubuntu24.04)
-- [![Docker Image Size (tag)](https://img.shields.io/docker/image-size/yama07/docker-ubuntu-lxde/24.04-xrdp-slim_ja?style=flat-square)](https://hub.docker.com/r/yama07/docker-ubuntu-lxde/tags?name=24.04-xrdp-slim_ja)
-  `24.04-xrdp-slim_ja`, `noble-xrdp-slim_ja`: サイズを軽量化した Ubuntu24.04 ベース LXQt [(xrdp/Dockerfile.ubuntu24.04)](https://github.com/yama07/docker-ubuntu-lxde/blob/master/xrdp/Dockerfile.ubuntu24.04)
-- [![Docker Image Size (tag)](https://img.shields.io/docker/image-size/yama07/docker-ubuntu-lxde/24.04-xrdp-audio_ja?style=flat-square)](https://hub.docker.com/r/yama07/docker-ubuntu-lxde/tags?name=24.04-xrdp-audio_ja)
-  `24.04-xrdp-audio_ja`, `noble-xrdp-audio_ja`: 音声転送可能な Ubuntu24.04 ベース LXQt [(xrdp/Dockerfile.ubuntu24.04_audio)](https://github.com/yama07/docker-ubuntu-lxde/blob/master/xrdp/Dockerfile.ubuntu24.04_audio)
-- [![Docker Image Size (tag)](https://img.shields.io/docker/image-size/yama07/docker-ubuntu-lxde/22.04-xrdp_ja?style=flat-square)](https://hub.docker.com/r/yama07/docker-ubuntu-lxde/tags?name=22.04-xrdp_ja)
-  `22.04-xrdp_ja`, `jammy-xrdp_ja`: Ubuntu22.04 ベース [(xrdp/Dockerfile.ubuntu22.04)](https://github.com/yama07/docker-ubuntu-lxde/blob/master/xrdp/Dockerfile.ubuntu22.04)
-- [![Docker Image Size (tag)](https://img.shields.io/docker/image-size/yama07/docker-ubuntu-lxde/22.04-xrdp-slim_ja?style=flat-square)](https://hub.docker.com/r/yama07/docker-ubuntu-lxde/tags?name=22.04-xrdp-slim_ja)
-  `22.04-xrdp-slim_ja`, `jammy-xrdp-slim_ja`: サイズを軽量化した Ubuntu22.04 ベース [(xrdp/Dockerfile.ubuntu22.04)](https://github.com/yama07/docker-ubuntu-lxde/blob/master/xrdp/Dockerfile.ubuntu22.04)
-- [![Docker Image Size (tag)](https://img.shields.io/docker/image-size/yama07/docker-ubuntu-lxde/22.04-xrdp-pulseaudio_ja?style=flat-square)](https://hub.docker.com/r/yama07/docker-ubuntu-lxde/tags?name=22.04-xrdp-pulseaudio_ja)
-  `22.04-xrdp-pulseaudio_ja`, `jammy-xrdp-pulseaudio_ja`: 音声転送可能な Ubuntu22.04 ベース [(xrdp/Dockerfile.ubuntu22.04_pulseaudio)](https://github.com/yama07/docker-ubuntu-lxde/blob/master/xrdp/Dockerfile.ubuntu22.04_pulseaudio)
-- [![Docker Image Size (tag)](https://img.shields.io/docker/image-size/yama07/docker-ubuntu-lxde/20.04-xrdp_ja?style=flat-square)](https://hub.docker.com/r/yama07/docker-ubuntu-lxde/tags?name=20.04-xrdp_ja)
-  `20.04-xrdp_ja`, `focal-xrdp_ja`: Ubuntu20.04 ベース [(xrdp/Dockerfile.ubuntu20.04)](https://github.com/yama07/docker-ubuntu-lxde/blob/master/xrdp/Dockerfile.ubuntu20.04)
-- [![Docker Image Size (tag)](https://img.shields.io/docker/image-size/yama07/docker-ubuntu-lxde/20.04-xrdp-slim_ja?style=flat-square)](https://hub.docker.com/r/yama07/docker-ubuntu-lxde/tags?name=20.04-xrdp-slim_ja)
-  `20.04-xrdp-slim_ja`, `focal-xrdp-slim_ja`: サイズを軽量化した Ubuntu20.04 ベース [(xrdp/Dockerfile.ubuntu20.04)](https://github.com/yama07/docker-ubuntu-lxde/blob/master/xrdp/Dockerfile.ubuntu20.04)
-- [![Docker Image Size (tag)](https://img.shields.io/docker/image-size/yama07/docker-ubuntu-lxde/20.04-xrdp-pulseaudio_ja?style=flat-square)](https://hub.docker.com/r/yama07/docker-ubuntu-lxde/tags?name=20.04-xrdp-pulseaudio_ja)
-  `20.04-xrdp-pulseaudio_ja`, `focal-xrdp-pulseaudio_ja`: 音声転送可能な Ubuntu20.04 ベース [(xrdp/Dockerfile.ubuntu20.04_pulseaudio)](https://github.com/yama07/docker-ubuntu-lxde/blob/master/xrdp/Dockerfile.ubuntu20.04_pulseaudio)
+- [![Docker Image Size (tag)](https://img.shields.io/docker/image-size/ssshiro/docker-ubuntu-lxde/24.04-xrdp_ru?style=flat-square)](https://hub.docker.com/r/ssshiro/docker-ubuntu-lxde/tags?name=24.04-xrdp_ru)
+  `24.04-xrdp_ru`, `noble-xrdp_ru`, `latest-xrdp`, `latest`: Ubuntu 24.04, LXQt [(xrdp/Dockerfile.ubuntu24.04)](https://github.com/SSShiro/docker-ubuntu-lxde/blob/master/xrdp/Dockerfile.ubuntu24.04)
+- [![Docker Image Size (tag)](https://img.shields.io/docker/image-size/ssshiro/docker-ubuntu-lxde/24.04-xrdp-slim_ru?style=flat-square)](https://hub.docker.com/r/ssshiro/docker-ubuntu-lxde/tags?name=24.04-xrdp-slim_ru)
+  `24.04-xrdp-slim_ru`, `noble-xrdp-slim_ru`: облегчённый Ubuntu 24.04, LXQt [(xrdp/Dockerfile.ubuntu24.04)](https://github.com/SSShiro/docker-ubuntu-lxde/blob/master/xrdp/Dockerfile.ubuntu24.04)
+- [![Docker Image Size (tag)](https://img.shields.io/docker/image-size/ssshiro/docker-ubuntu-lxde/24.04-xrdp-audio_ru?style=flat-square)](https://hub.docker.com/r/ssshiro/docker-ubuntu-lxde/tags?name=24.04-xrdp-audio_ru)
+  `24.04-xrdp-audio_ru`, `noble-xrdp-audio_ru`: Ubuntu 24.04, LXQt с поддержкой звука [(xrdp/Dockerfile.ubuntu24.04_audio)](https://github.com/SSShiro/docker-ubuntu-lxde/blob/master/xrdp/Dockerfile.ubuntu24.04_audio)
+- [![Docker Image Size (tag)](https://img.shields.io/docker/image-size/ssshiro/docker-ubuntu-lxde/22.04-xrdp_ru?style=flat-square)](https://hub.docker.com/r/ssshiro/docker-ubuntu-lxde/tags?name=22.04-xrdp_ru)
+  `22.04-xrdp_ru`, `jammy-xrdp_ru`: Ubuntu 22.04, LXDE [(xrdp/Dockerfile.ubuntu22.04)](https://github.com/SSShiro/docker-ubuntu-lxde/blob/master/xrdp/Dockerfile.ubuntu22.04)
+- [![Docker Image Size (tag)](https://img.shields.io/docker/image-size/ssshiro/docker-ubuntu-lxde/22.04-xrdp-slim_ru?style=flat-square)](https://hub.docker.com/r/ssshiro/docker-ubuntu-lxde/tags?name=22.04-xrdp-slim_ru)
+  `22.04-xrdp-slim_ru`, `jammy-xrdp-slim_ru`: облегчённый Ubuntu 22.04, LXDE [(xrdp/Dockerfile.ubuntu22.04)](https://github.com/SSShiro/docker-ubuntu-lxde/blob/master/xrdp/Dockerfile.ubuntu22.04)
+- [![Docker Image Size (tag)](https://img.shields.io/docker/image-size/ssshiro/docker-ubuntu-lxde/22.04-xrdp-pulseaudio_ru?style=flat-square)](https://hub.docker.com/r/ssshiro/docker-ubuntu-lxde/tags?name=22.04-xrdp-pulseaudio_ru)
+  `22.04-xrdp-pulseaudio_ru`, `jammy-xrdp-pulseaudio_ru`: Ubuntu 22.04, LXDE с поддержкой звука [(xrdp/Dockerfile.ubuntu22.04_pulseaudio)](https://github.com/SSShiro/docker-ubuntu-lxde/blob/master/xrdp/Dockerfile.ubuntu22.04_pulseaudio)
+- [![Docker Image Size (tag)](https://img.shields.io/docker/image-size/ssshiro/docker-ubuntu-lxde/20.04-xrdp_ru?style=flat-square)](https://hub.docker.com/r/ssshiro/docker-ubuntu-lxde/tags?name=20.04-xrdp_ru)
+  `20.04-xrdp_ru`, `focal-xrdp_ru`: Ubuntu 20.04, LXDE [(xrdp/Dockerfile.ubuntu20.04)](https://github.com/SSShiro/docker-ubuntu-lxde/blob/master/xrdp/Dockerfile.ubuntu20.04)
+- [![Docker Image Size (tag)](https://img.shields.io/docker/image-size/ssshiro/docker-ubuntu-lxde/20.04-xrdp-slim_ru?style=flat-square)](https://hub.docker.com/r/ssshiro/docker-ubuntu-lxde/tags?name=20.04-xrdp-slim_ru)
+  `20.04-xrdp-slim_ru`, `focal-xrdp-slim_ru`: облегчённый Ubuntu 20.04, LXDE [(xrdp/Dockerfile.ubuntu20.04)](https://github.com/SSShiro/docker-ubuntu-lxde/blob/master/xrdp/Dockerfile.ubuntu20.04)
+- [![Docker Image Size (tag)](https://img.shields.io/docker/image-size/ssshiro/docker-ubuntu-lxde/20.04-xrdp-pulseaudio_ru?style=flat-square)](https://hub.docker.com/r/ssshiro/docker-ubuntu-lxde/tags?name=20.04-xrdp-pulseaudio_ru)
+  `20.04-xrdp-pulseaudio_ru`, `focal-xrdp-pulseaudio_ru`: Ubuntu 20.04, LXDE с поддержкой звука [(xrdp/Dockerfile.ubuntu20.04_pulseaudio)](https://github.com/SSShiro/docker-ubuntu-lxde/blob/master/xrdp/Dockerfile.ubuntu20.04_pulseaudio)
 - ![Static Badge](https://img.shields.io/badge/EOL-darkred?style=flat-square)
-  `ubuntu18.04_ja`: Ubuntu18.04 ベース [(xrdp/Dockerfile.ubuntu18.04)](https://github.com/yama07/docker-ubuntu-lxde/blob/master/xrdp/Dockerfile.ubuntu18.04)
+  `ubuntu18.04_ru`: Ubuntu 18.04 (EOL) [(xrdp/Dockerfile.ubuntu18.04)](https://github.com/SSShiro/docker-ubuntu-lxde/blob/master/xrdp/Dockerfile.ubuntu18.04)
 - ![Static Badge](https://img.shields.io/badge/EOL-darkred?style=flat-square)
-  `ubuntu18.04-pulseaudio_ja`: 音声転送可能な Ubuntu18.04 ベース [(xrdp/Dockerfile.ubuntu18.04_pulseaudio)](https://github.com/yama07/docker-ubuntu-lxde/blob/master/xrdp/Dockerfile.ubuntu18.04_pulseaudio)
+  `ubuntu18.04-pulseaudio_ru`: Ubuntu 18.04 с поддержкой звука (EOL) [(xrdp/Dockerfile.ubuntu18.04_pulseaudio)](https://github.com/SSShiro/docker-ubuntu-lxde/blob/master/xrdp/Dockerfile.ubuntu18.04_pulseaudio)
 - ![Static Badge](https://img.shields.io/badge/EOL-darkred?style=flat-square)
-  `ubuntu16.04_ja`: Ubuntu16.04 ベース [(xrdp/Dockerfile.ubuntu16.04)](https://github.com/yama07/docker-ubuntu-lxde/blob/master/xrdp/Dockerfile.ubuntu16.04)
+  `ubuntu16.04_ru`: Ubuntu 16.04 (EOL) [(xrdp/Dockerfile.ubuntu16.04)](https://github.com/SSShiro/docker-ubuntu-lxde/blob/master/xrdp/Dockerfile.ubuntu16.04)
 
-## How to use
+## Использование
 
-### Docker コンテナの起動
-
-Docker コンテナの起動方法は以下の通りです。
+### Запуск контейнера
 
 ```
 $ docker run --rm -it \
     -p 3389:3389 \
     -u $(id -u):$(id -g) \
-    -e USER=yama07 \
+    -e USER=developer \
     -e PASSWD=mypasswd \
-    yama07/docker-ubuntu-lxde:24.04-xrdp_ja
+    ssshiro/docker-ubuntu-lxde:24.04-xrdp_ru
 ```
 
-オプションは以下の通りです。
+Параметры запуска:
 
 - `-p port:3389`
-  クライアントから接続されるポートを`port`に設定してください。
+  Укажите в `port` порт для подключения клиента.
 - `-u user:group`
-  コンテナを起動する UID を`user`に、GID を`group`に設定してください。
-  指定しない場合は、root ユーザ(UID=0,GID=0)として起動します。
-  なお、root ユーザとして起動した場合は、日本語入力(mozc)が利用できません。
+  Укажите UID в `user` и GID в `group` для запуска контейнера.
+  Если не задано — контейнер запускается от root (UID=0, GID=0).
 - `-e USER=loginUser`
-  RDP によるログインユーザを`loginUser`に設定してください。
-  指定しない場合は、"developer"となります。ただし、root ユーザとしてコンテナを起動した際は"root"となります。
+  Имя пользователя для входа через RDP. По умолчанию — `developer`
+  (при запуске от root — `root`).
 - `-e PASSWD=loginPasswd`
-  RDP によるログインパスワードを`loginPasswd`に設定してください。
-  指定しない場合は、"xrdppasswd"となります。
+  Пароль для входа через RDP. По умолчанию — `xrdppasswd`.
 
-接続後にログイン画面やデスクトップ画面が表示されない場合、`--privileged`オプションを付けることで成功する可能性があります。
+Если после подключения не отображается экран входа или рабочий стол, попробуйте добавить опцию `--privileged`.
 
-コンテナ内のデスクトップ環境において、ほとんどの個人設定はホームディレクトリに保存されるため、 `-v ${HOME}/container_home:/home/yama07` のようにホームディレクトリをマウントするオプションを追加すれば、コンテナを停止＆起動しても個人の設定が維持されます。
-ただし、マウントするディレクトリを**起動前に**作成しておかないと、Permission エラーが発生するため注意してください。
+Большинство пользовательских настроек хранятся в домашнем каталоге контейнера.
+Чтобы сохранять их между перезапусками, добавьте `-v ${HOME}/container_home:/home/developer`.
+**Создайте каталог для монтирования заранее**, иначе возникнет ошибка прав доступа.
 
-### クライアントからの接続
+### Подключение клиента
 
-docker run 後に、リモートデスクトップアプリケーション（Mac の場合は「Microsoft Remote Desktop」、Linux の場合は「xfreerdp」や「Remmina」等）で接続してください。
+После `docker run` подключитесь через приложение удалённого рабочего стола
+(Windows — «Подключение к удалённому рабочему столу», macOS — «Microsoft Remote Desktop», Linux — `xfreerdp` или `Remmina`).
 
-この際、接続先は(Docker ホストの IP):(`-p`オプションで指定した`port`)、ユーザは`-e USER`で指定した`loginUser`、パスワードは`-e PASSWD`で指定した`loginPasswd`を指定してください。
+Адрес подключения: `<IP Docker-хоста>:<port>`, пользователь — значение `-e USER`, пароль — значение `-e PASSWD`.
 
-### カスタマイズ
+### Кастомизация
 
-この Docker イメージはあまりパッケージをインストールしていないため、そのままでは利用範囲が限られます。
-そのため、リポジトリ内の Dockerfile を参考にして独自の Dockerfile を作成するか、Docker Hub に公開している Docker イメージをベースイメージとして利用してカスタマイズすることをお勧めします。
+Этот образ содержит минимальный набор пакетов. Для расширения функциональности рекомендуется создать собственный Dockerfile на его основе или использовать опубликованный образ с Docker Hub как базовый.
 
-カスタマイズしたイメージを作成するサンプルが[こちら](https://github.com/yama07/docker-ubuntu-lxde/blob/master/xrdp/examples/ubuntu22.04)にありますので、ご参考にしてください。
+Пример кастомизированного образа доступен [здесь](https://github.com/SSShiro/docker-ubuntu-lxde/blob/master/xrdp/examples/ubuntu22.04).
 
-![カスタマイズ例](https://raw.githubusercontent.com/yama07/docker-ubuntu-lxde/master/screenshot/XRDP-example-22.04-app.png)
+![Пример кастомизации](https://raw.githubusercontent.com/SSShiro/docker-ubuntu-lxde/master/screenshot/XRDP-example-22.04-app.png)
 
-## How to build
-
-Docker イメージのビルド方法は以下の通りです。
-（イメージの名前やタグは適宜変更してください。）
+## Сборка образа
 
 ```
-$ git clone https://github.com/yama07/docker-ubuntu-lxde.git
+$ git clone https://github.com/SSShiro/docker-ubuntu-lxde.git
 $ docker build \
-    -t lxde_xrdp:ubuntu24.04_ja \
+    -t lxde_xrdp:ubuntu24.04_ru \
     -f ./xrdp/Dockerfile.ubuntu24.04 \
     ./xrdp
 
-## Slim image
+## Облегчённый образ
 $ docker build \
     --build-arg ADDITIONAL_APT_GET_OPTS=--no-install-recommends \
-    -t lxde_xrdp:ubuntu24.04-slim_ja \
+    -t lxde_xrdp:ubuntu24.04-slim_ru \
     -f ./xrdp/Dockerfile.ubuntu24.04 \
     ./xrdp
 ```

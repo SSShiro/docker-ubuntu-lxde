@@ -1,63 +1,63 @@
 # docker-ubuntu-lxde
 
-[![Docker Pulls](https://img.shields.io/docker/pulls/yama07/docker-ubuntu-lxde?style=for-the-badge)](https://hub.docker.com/r/yama07/docker-ubuntu-lxde)
-[![GitHub](https://img.shields.io/github/license/yama07/docker-ubuntu-lxde?style=for-the-badge)](https://github.com/yama07/docker-ubuntu-lxde)
+[![Docker Pulls](https://img.shields.io/docker/pulls/ssshiro/docker-ubuntu-lxde?style=for-the-badge)](https://hub.docker.com/r/ssshiro/docker-ubuntu-lxde)
+[![GitHub](https://img.shields.io/github/license/SSShiro/docker-ubuntu-lxde?style=for-the-badge)](https://github.com/SSShiro/docker-ubuntu-lxde)
 
-[![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/yama07/docker-ubuntu-lxde/.github%2Fworkflows%2Fubuntu20.04_all.yml?logo=githubactions&label=Build%20Ubuntu20.04%20based%20Docker%20images&style=for-the-badge)](https://github.com/yama07/docker-ubuntu-lxde/actions/workflows/ubuntu20.04_all.yml)
-[![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/yama07/docker-ubuntu-lxde/.github%2Fworkflows%2Fubuntu22.04_all.yml?logo=githubactions&label=Build%20Ubuntu22.04%20based%20Docker%20images&style=for-the-badge)](https://github.com/yama07/docker-ubuntu-lxde/actions/workflows/ubuntu22.04_all.yml)
-[![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/yama07/docker-ubuntu-lxde/.github%2Fworkflows%2Fubuntu24.04_all.yml?logo=githubactions&label=Build%20Ubuntu24.04%20based%20Docker%20images&style=for-the-badge)](https://github.com/yama07/docker-ubuntu-lxde/actions/workflows/ubuntu24.04_all.yml)
+[![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/SSShiro/docker-ubuntu-lxde/.github%2Fworkflows%2Fubuntu20.04_all.yml?logo=githubactions&label=Build%20Ubuntu20.04%20based%20Docker%20images&style=for-the-badge)](https://github.com/SSShiro/docker-ubuntu-lxde/actions/workflows/ubuntu20.04_all.yml)
+[![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/SSShiro/docker-ubuntu-lxde/.github%2Fworkflows%2Fubuntu22.04_all.yml?logo=githubactions&label=Build%20Ubuntu22.04%20based%20Docker%20images&style=for-the-badge)](https://github.com/SSShiro/docker-ubuntu-lxde/actions/workflows/ubuntu22.04_all.yml)
+[![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/SSShiro/docker-ubuntu-lxde/.github%2Fworkflows%2Fubuntu24.04_all.yml?logo=githubactions&label=Build%20Ubuntu24.04%20based%20Docker%20images&style=for-the-badge)](https://github.com/SSShiro/docker-ubuntu-lxde/actions/workflows/ubuntu24.04_all.yml)
 
-## Quick reference
+## Быстрый старт
 
-- [README | XRDP Docker image](https://github.com/yama07/docker-ubuntu-lxde/blob/master/xrdp/README.md)
-- [README | VNC/noVNC Docker image](https://github.com/yama07/docker-ubuntu-lxde/blob/master/vnc/README.md)
+- [README | XRDP Docker образ](https://github.com/SSShiro/docker-ubuntu-lxde/blob/master/xrdp/README.md)
+- [README | VNC/noVNC Docker образ](https://github.com/SSShiro/docker-ubuntu-lxde/blob/master/vnc/README.md)
 
-## What is this?
+## Что это?
 
-Ubuntu の LXDE/LXQt デスクトップ環境の Docker image です。
-リモートデスクトップとして RDP(xrdp)や VNC(x11vnc, noVNC)を使用します。
+Docker-образы с рабочим столом LXDE/LXQt на базе Ubuntu.
+Для удалённого подключения используются RDP (xrdp) и VNC (x11vnc, noVNC).
 
-日本語環境(ibus-mozc による日本語入力可能)かつ、`-u`による一般ユーザ起動においても`sudo`コマンドが使用可能です。
+Русская локаль, часовой пояс Moscow. При запуске от обычного пользователя через `-u` доступна команда `sudo`.
 
-## Supported tags
+## Поддерживаемые теги
 
 ### XRDP
 
-- [![Docker Image Size (tag)](https://img.shields.io/docker/image-size/yama07/docker-ubuntu-lxde/24.04-xrdp_ja?style=flat-square)](https://hub.docker.com/r/yama07/docker-ubuntu-lxde/tags?name=24.04-xrdp_ja)
-  `24.04-xrdp_ja`, `noble-xrdp_ja`, `latest-xrdp`, `latest`: Ubuntu24.04 ベース LXQt [(xrdp/Dockerfile.ubuntu24.04)](https://github.com/yama07/docker-ubuntu-lxde/blob/master/xrdp/Dockerfile.ubuntu24.04)
-- [![Docker Image Size (tag)](https://img.shields.io/docker/image-size/yama07/docker-ubuntu-lxde/24.04-xrdp-slim_ja?style=flat-square)](https://hub.docker.com/r/yama07/docker-ubuntu-lxde/tags?name=24.04-xrdp-slim_ja)
-  `24.04-xrdp-slim_ja`, `noble-xrdp-slim_ja`: サイズを軽量化した Ubuntu24.04 ベース LXQt [(xrdp/Dockerfile.ubuntu24.04)](https://github.com/yama07/docker-ubuntu-lxde/blob/master/xrdp/Dockerfile.ubuntu24.04)
-- [![Docker Image Size (tag)](https://img.shields.io/docker/image-size/yama07/docker-ubuntu-lxde/24.04-xrdp-audio_ja?style=flat-square)](https://hub.docker.com/r/yama07/docker-ubuntu-lxde/tags?name=24.04-xrdp-audio_ja)
-  `24.04-xrdp-audio_ja`, `noble-xrdp-audio_ja`: 音声転送可能な Ubuntu24.04 ベース LXQt [(xrdp/Dockerfile.ubuntu24.04_audio)](https://github.com/yama07/docker-ubuntu-lxde/blob/master/xrdp/Dockerfile.ubuntu24.04_audio)
-- [![Docker Image Size (tag)](https://img.shields.io/docker/image-size/yama07/docker-ubuntu-lxde/22.04-xrdp_ja?style=flat-square)](https://hub.docker.com/r/yama07/docker-ubuntu-lxde/tags?name=22.04-xrdp_ja)
-  `22.04-xrdp_ja`, `jammy-xrdp_ja`: Ubuntu22.04 ベース [(xrdp/Dockerfile.ubuntu22.04)](https://github.com/yama07/docker-ubuntu-lxde/blob/master/xrdp/Dockerfile.ubuntu22.04)
-- [![Docker Image Size (tag)](https://img.shields.io/docker/image-size/yama07/docker-ubuntu-lxde/22.04-xrdp-slim_ja?style=flat-square)](https://hub.docker.com/r/yama07/docker-ubuntu-lxde/tags?name=22.04-xrdp-slim_ja)
-  `22.04-xrdp-slim_ja`, `jammy-xrdp-slim_ja`: サイズを軽量化した Ubuntu22.04 ベース [(xrdp/Dockerfile.ubuntu22.04)](https://github.com/yama07/docker-ubuntu-lxde/blob/master/xrdp/Dockerfile.ubuntu22.04)
-- [![Docker Image Size (tag)](https://img.shields.io/docker/image-size/yama07/docker-ubuntu-lxde/22.04-xrdp-pulseaudio_ja?style=flat-square)](https://hub.docker.com/r/yama07/docker-ubuntu-lxde/tags?name=22.04-xrdp-pulseaudio_ja)
-  `22.04-xrdp-pulseaudio_ja`, `jammy-xrdp-pulseaudio_ja`: 音声転送可能な Ubuntu22.04 ベース [(xrdp/Dockerfile.ubuntu22.04_pulseaudio)](https://github.com/yama07/docker-ubuntu-lxde/blob/master/xrdp/Dockerfile.ubuntu22.04_pulseaudio)
-- [![Docker Image Size (tag)](https://img.shields.io/docker/image-size/yama07/docker-ubuntu-lxde/20.04-xrdp_ja?style=flat-square)](https://hub.docker.com/r/yama07/docker-ubuntu-lxde/tags?name=20.04-xrdp_ja)
-  `20.04-xrdp_ja`, `focal-xrdp_ja`: Ubuntu20.04 ベース [(xrdp/Dockerfile.ubuntu20.04)](https://github.com/yama07/docker-ubuntu-lxde/blob/master/xrdp/Dockerfile.ubuntu20.04)
-- [![Docker Image Size (tag)](https://img.shields.io/docker/image-size/yama07/docker-ubuntu-lxde/20.04-xrdp-slim_ja?style=flat-square)](https://hub.docker.com/r/yama07/docker-ubuntu-lxde/tags?name=20.04-xrdp-slim_ja)
-  `20.04-xrdp-slim_ja`, `focal-xrdp-slim_ja`: サイズを軽量化した Ubuntu20.04 ベース [(xrdp/Dockerfile.ubuntu20.04)](https://github.com/yama07/docker-ubuntu-lxde/blob/master/xrdp/Dockerfile.ubuntu20.04)
-- [![Docker Image Size (tag)](https://img.shields.io/docker/image-size/yama07/docker-ubuntu-lxde/20.04-xrdp-pulseaudio_ja?style=flat-square)](https://hub.docker.com/r/yama07/docker-ubuntu-lxde/tags?name=20.04-xrdp-pulseaudio_ja)
-  `20.04-xrdp-pulseaudio_ja`, `focal-xrdp-pulseaudio_ja`: 音声転送可能な Ubuntu20.04 ベース [(xrdp/Dockerfile.ubuntu20.04_pulseaudio)](https://github.com/yama07/docker-ubuntu-lxde/blob/master/xrdp/Dockerfile.ubuntu20.04_pulseaudio)
+- [![Docker Image Size (tag)](https://img.shields.io/docker/image-size/ssshiro/docker-ubuntu-lxde/24.04-xrdp_ru?style=flat-square)](https://hub.docker.com/r/ssshiro/docker-ubuntu-lxde/tags?name=24.04-xrdp_ru)
+  `24.04-xrdp_ru`, `noble-xrdp_ru`, `latest-xrdp`, `latest`: Ubuntu 24.04, LXQt [(xrdp/Dockerfile.ubuntu24.04)](https://github.com/SSShiro/docker-ubuntu-lxde/blob/master/xrdp/Dockerfile.ubuntu24.04)
+- [![Docker Image Size (tag)](https://img.shields.io/docker/image-size/ssshiro/docker-ubuntu-lxde/24.04-xrdp-slim_ru?style=flat-square)](https://hub.docker.com/r/ssshiro/docker-ubuntu-lxde/tags?name=24.04-xrdp-slim_ru)
+  `24.04-xrdp-slim_ru`, `noble-xrdp-slim_ru`: облегчённый Ubuntu 24.04, LXQt [(xrdp/Dockerfile.ubuntu24.04)](https://github.com/SSShiro/docker-ubuntu-lxde/blob/master/xrdp/Dockerfile.ubuntu24.04)
+- [![Docker Image Size (tag)](https://img.shields.io/docker/image-size/ssshiro/docker-ubuntu-lxde/24.04-xrdp-audio_ru?style=flat-square)](https://hub.docker.com/r/ssshiro/docker-ubuntu-lxde/tags?name=24.04-xrdp-audio_ru)
+  `24.04-xrdp-audio_ru`, `noble-xrdp-audio_ru`: Ubuntu 24.04, LXQt с поддержкой звука [(xrdp/Dockerfile.ubuntu24.04_audio)](https://github.com/SSShiro/docker-ubuntu-lxde/blob/master/xrdp/Dockerfile.ubuntu24.04_audio)
+- [![Docker Image Size (tag)](https://img.shields.io/docker/image-size/ssshiro/docker-ubuntu-lxde/22.04-xrdp_ru?style=flat-square)](https://hub.docker.com/r/ssshiro/docker-ubuntu-lxde/tags?name=22.04-xrdp_ru)
+  `22.04-xrdp_ru`, `jammy-xrdp_ru`: Ubuntu 22.04, LXDE [(xrdp/Dockerfile.ubuntu22.04)](https://github.com/SSShiro/docker-ubuntu-lxde/blob/master/xrdp/Dockerfile.ubuntu22.04)
+- [![Docker Image Size (tag)](https://img.shields.io/docker/image-size/ssshiro/docker-ubuntu-lxde/22.04-xrdp-slim_ru?style=flat-square)](https://hub.docker.com/r/ssshiro/docker-ubuntu-lxde/tags?name=22.04-xrdp-slim_ru)
+  `22.04-xrdp-slim_ru`, `jammy-xrdp-slim_ru`: облегчённый Ubuntu 22.04, LXDE [(xrdp/Dockerfile.ubuntu22.04)](https://github.com/SSShiro/docker-ubuntu-lxde/blob/master/xrdp/Dockerfile.ubuntu22.04)
+- [![Docker Image Size (tag)](https://img.shields.io/docker/image-size/ssshiro/docker-ubuntu-lxde/22.04-xrdp-pulseaudio_ru?style=flat-square)](https://hub.docker.com/r/ssshiro/docker-ubuntu-lxde/tags?name=22.04-xrdp-pulseaudio_ru)
+  `22.04-xrdp-pulseaudio_ru`, `jammy-xrdp-pulseaudio_ru`: Ubuntu 22.04, LXDE с поддержкой звука [(xrdp/Dockerfile.ubuntu22.04_pulseaudio)](https://github.com/SSShiro/docker-ubuntu-lxde/blob/master/xrdp/Dockerfile.ubuntu22.04_pulseaudio)
+- [![Docker Image Size (tag)](https://img.shields.io/docker/image-size/ssshiro/docker-ubuntu-lxde/20.04-xrdp_ru?style=flat-square)](https://hub.docker.com/r/ssshiro/docker-ubuntu-lxde/tags?name=20.04-xrdp_ru)
+  `20.04-xrdp_ru`, `focal-xrdp_ru`: Ubuntu 20.04, LXDE [(xrdp/Dockerfile.ubuntu20.04)](https://github.com/SSShiro/docker-ubuntu-lxde/blob/master/xrdp/Dockerfile.ubuntu20.04)
+- [![Docker Image Size (tag)](https://img.shields.io/docker/image-size/ssshiro/docker-ubuntu-lxde/20.04-xrdp-slim_ru?style=flat-square)](https://hub.docker.com/r/ssshiro/docker-ubuntu-lxde/tags?name=20.04-xrdp-slim_ru)
+  `20.04-xrdp-slim_ru`, `focal-xrdp-slim_ru`: облегчённый Ubuntu 20.04, LXDE [(xrdp/Dockerfile.ubuntu20.04)](https://github.com/SSShiro/docker-ubuntu-lxde/blob/master/xrdp/Dockerfile.ubuntu20.04)
+- [![Docker Image Size (tag)](https://img.shields.io/docker/image-size/ssshiro/docker-ubuntu-lxde/20.04-xrdp-pulseaudio_ru?style=flat-square)](https://hub.docker.com/r/ssshiro/docker-ubuntu-lxde/tags?name=20.04-xrdp-pulseaudio_ru)
+  `20.04-xrdp-pulseaudio_ru`, `focal-xrdp-pulseaudio_ru`: Ubuntu 20.04, LXDE с поддержкой звука [(xrdp/Dockerfile.ubuntu20.04_pulseaudio)](https://github.com/SSShiro/docker-ubuntu-lxde/blob/master/xrdp/Dockerfile.ubuntu20.04_pulseaudio)
 
 ### VNC
 
-- [![Docker Image Size (tag)](https://img.shields.io/docker/image-size/yama07/docker-ubuntu-lxde/24.04-vnc_ja?style=flat-square)](https://hub.docker.com/r/yama07/docker-ubuntu-lxde/tags?name=24.04-vnc_ja)
-  `24.04-vnc_ja`, `noble-vnc_ja`, `latest-vnc`: Ubuntu24.04 ベース LXQt [(vnc/Dockerfile.ubuntu24.04)](https://github.com/yama07/docker-ubuntu-lxde/blob/master/vnc/Dockerfile.ubuntu24.04)
-- [![Docker Image Size (tag)](https://img.shields.io/docker/image-size/yama07/docker-ubuntu-lxde/24.04-vnc-slim_ja?style=flat-square)](https://hub.docker.com/r/yama07/docker-ubuntu-lxde/tags?name=24.04-vnc-slim_ja)
-  `24.04-vnc-slim_ja`, `noble-vnc-slim_ja`: サイズを軽量化した Ubuntu24.04 ベース LXQt [(vnc/Dockerfile.ubuntu24.04_slim)](https://github.com/yama07/docker-ubuntu-lxde/blob/master/vnc/Dockerfile.ubuntu24.04)
-- [![Docker Image Size (tag)](https://img.shields.io/docker/image-size/yama07/docker-ubuntu-lxde/22.04-vnc_ja?style=flat-square)](https://hub.docker.com/r/yama07/docker-ubuntu-lxde/tags?name=22.04-vnc_ja)
-  `22.04-vnc_ja`, `jammy-vnc_ja`: Ubuntu22.04 ベース [(vnc/Dockerfile.ubuntu22.04)](https://github.com/yama07/docker-ubuntu-lxde/blob/master/vnc/Dockerfile.ubuntu22.04)
-- [![Docker Image Size (tag)](https://img.shields.io/docker/image-size/yama07/docker-ubuntu-lxde/22.04-vnc-slim_ja?style=flat-square)](https://hub.docker.com/r/yama07/docker-ubuntu-lxde/tags?name=22.04-vnc-slim_ja)
-  `22.04-vnc-slim_ja`, `jammy-vnc-slim_ja`: サイズを軽量化した Ubuntu22.04 ベース [(vnc/Dockerfile.ubuntu22.04_slim)](https://github.com/yama07/docker-ubuntu-lxde/blob/master/vnc/Dockerfile.ubuntu22.04)
-- [![Docker Image Size (tag)](https://img.shields.io/docker/image-size/yama07/docker-ubuntu-lxde/20.04-vnc_ja?style=flat-square)](https://hub.docker.com/r/yama07/docker-ubuntu-lxde/tags?name=20.04-vnc_ja)
-  `20.04-vnc_ja`, `focal-vnc_ja`: Ubuntu20.04 ベース [(vnc/Dockerfile.ubuntu20.04)](https://github.com/yama07/docker-ubuntu-lxde/blob/master/vnc/Dockerfile.ubuntu20.04)
-- [![Docker Image Size (tag)](https://img.shields.io/docker/image-size/yama07/docker-ubuntu-lxde/20.04-vnc-slim_ja?style=flat-square)](https://hub.docker.com/r/yama07/docker-ubuntu-lxde/tags?name=20.04-vnc-slim_ja)
-  `20.04-vnc-slim_ja`, `focal-vnc-slim_ja`: サイズを軽量化した Ubuntu20.04 ベース [(vnc/Dockerfile.ubuntu20.04_slim)](https://github.com/yama07/docker-ubuntu-lxde/blob/master/vnc/Dockerfile.ubuntu20.04)
+- [![Docker Image Size (tag)](https://img.shields.io/docker/image-size/ssshiro/docker-ubuntu-lxde/24.04-vnc_ru?style=flat-square)](https://hub.docker.com/r/ssshiro/docker-ubuntu-lxde/tags?name=24.04-vnc_ru)
+  `24.04-vnc_ru`, `noble-vnc_ru`, `latest-vnc`: Ubuntu 24.04, LXQt [(vnc/Dockerfile.ubuntu24.04)](https://github.com/SSShiro/docker-ubuntu-lxde/blob/master/vnc/Dockerfile.ubuntu24.04)
+- [![Docker Image Size (tag)](https://img.shields.io/docker/image-size/ssshiro/docker-ubuntu-lxde/24.04-vnc-slim_ru?style=flat-square)](https://hub.docker.com/r/ssshiro/docker-ubuntu-lxde/tags?name=24.04-vnc-slim_ru)
+  `24.04-vnc-slim_ru`, `noble-vnc-slim_ru`: облегчённый Ubuntu 24.04, LXQt [(vnc/Dockerfile.ubuntu24.04)](https://github.com/SSShiro/docker-ubuntu-lxde/blob/master/vnc/Dockerfile.ubuntu24.04)
+- [![Docker Image Size (tag)](https://img.shields.io/docker/image-size/ssshiro/docker-ubuntu-lxde/22.04-vnc_ru?style=flat-square)](https://hub.docker.com/r/ssshiro/docker-ubuntu-lxde/tags?name=22.04-vnc_ru)
+  `22.04-vnc_ru`, `jammy-vnc_ru`: Ubuntu 22.04, LXDE [(vnc/Dockerfile.ubuntu22.04)](https://github.com/SSShiro/docker-ubuntu-lxde/blob/master/vnc/Dockerfile.ubuntu22.04)
+- [![Docker Image Size (tag)](https://img.shields.io/docker/image-size/ssshiro/docker-ubuntu-lxde/22.04-vnc-slim_ru?style=flat-square)](https://hub.docker.com/r/ssshiro/docker-ubuntu-lxde/tags?name=22.04-vnc-slim_ru)
+  `22.04-vnc-slim_ru`, `jammy-vnc-slim_ru`: облегчённый Ubuntu 22.04, LXDE [(vnc/Dockerfile.ubuntu22.04)](https://github.com/SSShiro/docker-ubuntu-lxde/blob/master/vnc/Dockerfile.ubuntu22.04)
+- [![Docker Image Size (tag)](https://img.shields.io/docker/image-size/ssshiro/docker-ubuntu-lxde/20.04-vnc_ru?style=flat-square)](https://hub.docker.com/r/ssshiro/docker-ubuntu-lxde/tags?name=20.04-vnc_ru)
+  `20.04-vnc_ru`, `focal-vnc_ru`: Ubuntu 20.04, LXDE [(vnc/Dockerfile.ubuntu20.04)](https://github.com/SSShiro/docker-ubuntu-lxde/blob/master/vnc/Dockerfile.ubuntu20.04)
+- [![Docker Image Size (tag)](https://img.shields.io/docker/image-size/ssshiro/docker-ubuntu-lxde/20.04-vnc-slim_ru?style=flat-square)](https://hub.docker.com/r/ssshiro/docker-ubuntu-lxde/tags?name=20.04-vnc-slim_ru)
+  `20.04-vnc-slim_ru`, `focal-vnc-slim_ru`: облегчённый Ubuntu 20.04, LXDE [(vnc/Dockerfile.ubuntu20.04)](https://github.com/SSShiro/docker-ubuntu-lxde/blob/master/vnc/Dockerfile.ubuntu20.04)
 
-## Quick start
+## Быстрый запуск
 
 ### XRDP
 
@@ -65,17 +65,17 @@ Ubuntu の LXDE/LXQt デスクトップ環境の Docker image です。
 $ docker run -it \
     -p 3389:3389 \
     -u $(id -u):$(id -g) \
-    -e USER=yama07 \
+    -e USER=developer \
     -e PASSWD=mypasswd \
-    yama07/docker-ubuntu-lxde:24.04-xrdp_ja
+    ssshiro/docker-ubuntu-lxde:24.04-xrdp_ru
 ```
 
-リモートデスクトップアプリケーションで `<DockerホストのIPアドレス>:3389`に接続して下さい。
-ユーザー名は`yama07`、パスワードは`mypasswd`です。
+Подключитесь через приложение удалённого рабочего стола к `<IP-адрес Docker-хоста>:3389`.
+Имя пользователя — `developer`, пароль — `mypasswd`.
 
-接続後にログイン画面やデスクトップ画面が表示されない場合、`--privileged`オプションを付けることで成功する可能性があります。
+Если после подключения не отображается экран входа или рабочий стол, попробуйте добавить опцию `--privileged`.
 
-パラメータの詳細などは、[README | XRDP Docker image](https://github.com/yama07/docker-ubuntu-lxde/blob/master/xrdp/README.md)を参照して下さい。
+Подробное описание параметров см. в [README | XRDP Docker образ](https://github.com/SSShiro/docker-ubuntu-lxde/blob/master/xrdp/README.md).
 
 ### VNC
 
@@ -84,30 +84,30 @@ $ docker run -it \
     -p 5900:5900 \
     -p 8080:80 \
     -u $(id -u):$(id -g) \
-    -e USER=yama07 \
+    -e USER=developer \
     -e PASSWD=mypasswd \
     -e RESOLUTION=1024x768x24 \
-    yama07/docker-ubuntu-lxde:24.04-vnc_ja
+    ssshiro/docker-ubuntu-lxde:24.04-vnc_ru
 ```
 
-VNC クライアント（VNC Viewer）で`<DockerホストのIPアドレス>:5900`に接続して下さい。
-あるいは、Web ブラウザで`http://<DockerホストのIPアドレス>:8080/vnc.html`にアクセスして下さい。
-パスワードは`mypasswd`です。
+Подключитесь VNC-клиентом (VNC Viewer) к `<IP-адрес Docker-хоста>:5900`.
+Или откройте в браузере `http://<IP-адрес Docker-хоста>:8080/vnc.html`.
+Пароль — `mypasswd`.
 
-接続後にデスクトップ画面が表示されない場合、`--privileged`オプションを付けることで成功する可能性があります。
+Если после подключения не отображается рабочий стол, попробуйте добавить опцию `--privileged`.
 
-パラメータの詳細などは、[README | VNC/noVNC Docker image](https://github.com/yama07/docker-ubuntu-lxde/blob/master/vnc/README.md)を参照して下さい。
+Подробное описание параметров см. в [README | VNC/noVNC Docker образ](https://github.com/SSShiro/docker-ubuntu-lxde/blob/master/vnc/README.md).
 
-## Screenshots
+## Скриншоты
 
 ### XRDP
 
-![XRDP screenshot](https://raw.githubusercontent.com/yama07/docker-ubuntu-lxde/master/screenshot/XRDP-ubuntu24.04_ja.png)
+![Скриншот XRDP](https://raw.githubusercontent.com/SSShiro/docker-ubuntu-lxde/master/screenshot/XRDP-ubuntu24.04_ja.png)
 
 ### VNC
 
-![VNC screenshot](https://raw.githubusercontent.com/yama07/docker-ubuntu-lxde/master/screenshot/VNC-ubuntu24.04_ja.png)
+![Скриншот VNC](https://raw.githubusercontent.com/SSShiro/docker-ubuntu-lxde/master/screenshot/VNC-ubuntu24.04_ja.png)
 
 ### noVNC
 
-![noVNC screenshot](https://raw.githubusercontent.com/yama07/docker-ubuntu-lxde/master/screenshot/noVNC-ubuntu24.04_ja.png)
+![Скриншот noVNC](https://raw.githubusercontent.com/SSShiro/docker-ubuntu-lxde/master/screenshot/noVNC-ubuntu24.04_ja.png)

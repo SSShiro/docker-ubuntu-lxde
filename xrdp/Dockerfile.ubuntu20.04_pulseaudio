@@ -1,3 +1,5 @@
+ARG DOCKERHUB_USERNAME=ssshiro
+
 FROM ubuntu:20.04 AS build
 
 RUN apt-get update \
@@ -14,7 +16,6 @@ RUN curl -s -L https://github.com/neutrinolabs/pulseaudio-module-xrdp/archive/v0
 
 ####################################
 
-ARG DOCKERHUB_USERNAME=ssshiro
 FROM ${DOCKERHUB_USERNAME}/docker-ubuntu-lxde:20.04-xrdp_ru
 
 COPY --from=build \

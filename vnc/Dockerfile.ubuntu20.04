@@ -9,6 +9,7 @@ RUN echo 'path-include=/usr/share/locale/ru/LC_MESSAGES/*.mo' > /etc/dpkg/dpkg.c
     && DEBIAN_FRONTEND=noninteractive apt-get install -y $ADDITIONAL_APT_GET_OPTS \
       dbus-x11 \
       fonts-noto \
+      gettext-base \
       gosu \
       language-pack-ru \
       language-pack-ru-base \

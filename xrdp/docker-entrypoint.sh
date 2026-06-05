@@ -16,7 +16,7 @@ fi
 
 # Add user
 echo "USER_ID: $USER_ID"
-if [[ $USER_ID != "0" && ! $(getent passwd $USER) ]]; then
+if [[ $USER_ID != "0" && ! $(getent passwd $USER) && ! $(getent passwd $USER_ID) ]]; then
     export HOME=/home/$USER
     useradd -d ${HOME} -m -s /bin/bash -u $USER_ID -g $GROUP_ID $USER
 fi

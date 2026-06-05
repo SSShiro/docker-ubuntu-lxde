@@ -10,7 +10,7 @@ unset DEFAULT_USER DEFAULT_PASSWD
 
 # Add group
 echo "GROUP_ID: $GROUP_ID"
-if [[ $GROUP_ID != "0" && ! $(getent group $GROUP) ]]; then
+if [[ $GROUP_ID != "0" && ! $(getent group $GROUP) && ! $(getent group $GROUP_ID) ]]; then
     groupadd -g $GROUP_ID $GROUP
 fi
 
